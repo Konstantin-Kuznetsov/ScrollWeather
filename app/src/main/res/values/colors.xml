@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#536dfe</color>
+    <color name="colorHourlyForecastBackground">#f9cd88</color>
+    <color name="colorDailyForecastBackground">#b9bbef</color>
+    <color name="colorDarkText">#797983</color>
+    <color name="colorActiveElementLight">#90caf9</color>
+    <color name="colorBackgroundLight">#e7e7f5</color>
+    <color name="colorBackgroundDark">#42a5f5</color>
+</resources>

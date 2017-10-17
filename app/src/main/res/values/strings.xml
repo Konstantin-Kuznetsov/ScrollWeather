@@ -1,0 +1,166 @@
+<resources>
+    <string name="app_name">ScrollWeather</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <!-- Константы для отображения температуры и времени разных систем измерения -->
+    <string name="deg_celsius">\u2103</string>
+    <string name="deg_fahrenheit">\u2109</string>
+    <string name="deg_kelvin">\u212A</string>
+    <string name="deg_sign">\u00B0</string>
+    <string name="hPa_sign">\u3371</string>
+    <string name="m_sec">м/с</string>
+    <string name="percent_sign">\u0025</string>
+    <string name="hour_sign">ч</string>
+    <string name="time_of_calculation">прогноз рассчитан</string>
+
+    <!-- Строковые константы, относящиеся к меню настроек-->
+    <string name="category_search_settings_title">Настройки поисковых параметров</string>
+    <string name="lang_preference_title">Язык отображения прогноза</string>
+    <string name="lang_preference_dialog_title">Язык отображения прогноза</string>
+    <string name="units_preference_title">Система измерений</string>
+    <string name="units_preference_dialog_title">Желаемая система измерений</string>
+    <string name="cnt_days_preference_title">Количество дней в прогнозе</string>
+    <string name="cnt_days_preference_dialog_title">Желаемое количество показываемых дней в прогнозе (1 \u2013 17)</string>
+    <string name="cnt_3_hour_preference_title">Количество интервалов в почасовом прогнозе</string>
+    <string name="cnt_3_hour_preference_dialog_title">Желаемое количество показываемых интервалов в почасовом прогнозе (1 \u2013 20)</string>
+    <string name="accuracy_title">Тип поискового запроса при поиске городов</string>
+    <string name="accuracy_dialog_title">Тип поискового запроса при поиске городов</string>
+    <string name="default_lang_val">ru</string>
+    <string name="default_units_val">metric</string>
+    <string name="default_cntdays_val">7</string>
+    <string name="default_cnt_3_hour_val">8</string>
+    <string name="default_accuracy_val">like</string>
+
+    <string name="next_city_button_description">Next city</string>
+    <string name="previous_city_button_description">Previous city</string>
+
+    <!-- Текст оповещений пользователя-->
+    <string name="empty_list_warning">Необходимо добавить хотя бы один город в список для отображения (пункт \"Редактировать места\")</string>
+    <string name="no_data_warning">Нет возможности загрузить данные для показа. Обновите данные при включенном интернете</string>
+
+    <string-array name="lang_setting">
+        <item>Русский</item>
+        <item>Английский</item>
+        <item>Немецкий</item>
+        <item>Чешский</item>
+        <item>Итальянский</item>
+    </string-array>
+
+    <string-array name="lang_setting_val">
+        <item>ru</item>
+        <item>en</item>
+        <item>de</item>
+        <item>cz</item>
+        <item>it</item>
+    </string-array>
+
+    <string-array name="metric_setting">
+        <item>Metric (Celsius, meter/sec, hPa)</item>
+        <item>Imperial (Fahrenheit, miles/hour, hPa)</item>
+        <item>Standard (Kelvin, meter/sec, hPa)</item>
+    </string-array>
+
+    <string-array name="metric_setting_val">
+        <item>metric</item>
+        <item>imperial</item>
+        <item>standard</item>
+    </string-array>
+
+    <string-array name="cntdays_setting">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+        <item>11</item>
+        <item>12</item>
+        <item>13</item>
+        <item>14</item>
+        <item>15</item>
+        <item>16</item>
+        <item>17</item>
+    </string-array>
+
+    <string-array name="cntdays_setting_val">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+        <item>11</item>
+        <item>12</item>
+        <item>13</item>
+        <item>14</item>
+        <item>15</item>
+        <item>16</item>
+        <item>17</item>
+    </string-array>
+
+    <string-array name="cnt_3_hour_intervals_setting">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+        <item>11</item>
+        <item>12</item>
+        <item>13</item>
+        <item>14</item>
+        <item>15</item>
+        <item>16</item>
+        <item>17</item>
+        <item>18</item>
+        <item>19</item>
+        <item>20</item>
+    </string-array>
+
+    <string-array name="cnt_3_hour_intervals_setting_val">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+        <item>11</item>
+        <item>12</item>
+        <item>13</item>
+        <item>14</item>
+        <item>15</item>
+        <item>16</item>
+        <item>17</item>
+        <item>18</item>
+        <item>19</item>
+        <item>20</item>
+    </string-array>
+
+    <string-array name="accuracy_setting">
+        <item>Like (поиск похожих названий городов)</item>
+        <item>Accurate (точное совпадение поисковой строки)</item>
+    </string-array>
+
+    <string-array name="accuracy_setting_val">
+        <item>like</item>
+        <item>accurate</item>
+    </string-array>
+
+</resources>

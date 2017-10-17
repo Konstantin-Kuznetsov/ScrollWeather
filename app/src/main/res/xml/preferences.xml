@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.preference.PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <android.support.v7.preference.PreferenceCategory
+        android:title="@string/category_search_settings_title">
+
+    <android.support.v7.preference.ListPreference
+        android:key="lang"
+        android:title="@string/lang_preference_title"
+        android:dialogTitle="@string/lang_preference_dialog_title"
+        android:summary="%s"
+        android:defaultValue="@string/default_lang_val"
+        android:entries="@array/lang_setting"
+        android:entryValues="@array/lang_setting_val"/>
+
+    <android.support.v7.preference.ListPreference
+        android:key="units"
+        android:title="@string/units_preference_title"
+        android:dialogTitle="@string/units_preference_dialog_title"
+        android:summary="%s"
+        android:defaultValue="@string/default_units_val"
+        android:entries="@array/metric_setting"
+        android:entryValues="@array/metric_setting_val"/>
+
+    <android.support.v7.preference.ListPreference
+        android:key="cnt_days"
+        android:title="@string/cnt_days_preference_title"
+        android:dialogTitle="@string/cnt_days_preference_dialog_title"
+        android:summary="%s"
+        android:defaultValue="@string/default_cntdays_val"
+        android:entries="@array/cntdays_setting"
+        android:entryValues="@array/cntdays_setting_val"/>
+
+    <android.support.v7.preference.ListPreference
+        android:key="cnt_3_hour_intervals"
+        android:title="@string/cnt_3_hour_preference_title"
+        android:dialogTitle="@string/cnt_3_hour_preference_dialog_title"
+        android:summary="%s"
+        android:defaultValue="@string/default_cnt_3_hour_val"
+        android:entries="@array/cnt_3_hour_intervals_setting"
+        android:entryValues="@array/cnt_3_hour_intervals_setting_val"/>
+
+    <android.support.v7.preference.ListPreference
+        android:key="accuracy"
+        android:title="@string/accuracy_title"
+        android:dialogTitle="@string/accuracy_dialog_title"
+        android:summary="%s"
+        android:defaultValue="@string/default_accuracy_val"
+        android:entries="@array/accuracy_setting"
+        android:entryValues="@array/accuracy_setting_val"/>
+
+    </android.support.v7.preference.PreferenceCategory>
+
+</android.support.v7.preference.PreferenceScreen>

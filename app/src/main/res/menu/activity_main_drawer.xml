@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/forecastsItem"
+            android:icon="@drawable/overview"
+            android:title="Прогнозы"/>
+
+        <item
+            android:id="@+id/editCitiesItem"
+            android:icon="@drawable/ic_border_color_black_48dp"
+            android:title="Редактировать места"/>
+        <item
+            android:id="@+id/mapOverviewItem"
+            android:icon="@drawable/map_with_placeholder"
+            android:title="Обзор на карте"/>
+
+        <item
+            android:id="@+id/settingsItem"
+            android:icon="@drawable/ic_settings_black_48dp"
+            android:title="Настройки"/>
+    </group>
+
+    <item android:title="Communicate">
+        <menu>
+            <item
+                android:id="@+id/nav_share"
+                android:icon="@drawable/ic_share_black_48dp"
+                android:title="Share"/>
+            <item
+                android:id="@+id/nav_send"
+                android:icon="@drawable/ic_send_black_48dp"
+                android:title="Send"/>
+        </menu>
+    </item>
+
+</menu>
