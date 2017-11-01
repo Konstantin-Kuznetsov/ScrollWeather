@@ -8,6 +8,7 @@
 > - Dagger 2.11 (но не использовал Custom scopes, Subcomponents и dagger-android)
 > - Google maps
 > - Butterknife
+> - LeakCanary
 > - UI - ConstraintLayout, CardView, RecyclerView, NavigationView, PreferenceFragment(экран пользовательских настроек)
 
 Структурный паттерн - MVP
@@ -71,8 +72,9 @@ googleMap.setOnInfoWindowClickListener(new GoogleMap.OnInfoWindowClickListener()
 
 ![edit2-screen](https://user-images.githubusercontent.com/18750579/32275447-4c8f8002-bf1c-11e7-9644-bc22296c98f8.gif)
 
-Для добавления городов используется кастомизированный AppCompatAutoCompleteTextView. 
-Параметр android:completionThreshold = "2", при вводе двух и более букв названия города, асинхронно запрашивается список примерно подходящих по названию. Можно переключить на точное совпадение поискового запроса в настройках приложения, openweathermap позволяет искать и так и так. Полученный от сервера по api список городов формирует выпадающий список, причем каждый отдельный элемент тоже слегка изменен- загружается иконка погоды, код страны и т.д для удобства использования. И ради эксперимента, конечно тоже.
+Для добавления городов используется кастомизированный AppCompatAutoCompleteTextView, в котором переопределены `performFiltering` и `onFilterComplete`. 
+Параметр android:completionThreshold = "2", при вводе двух и более букв названия города, асинхронно запрашивается список примерно подходящих по названию.  Можно переключить на точное совпадение поискового запроса в настройках приложения, openweathermap позволяет искать и так и так. Полученный от сервера по api список городов формирует выпадающий список, причем каждый отдельный элемент тоже слегка изменен- загружается иконка погоды, код страны и т.д для удобства использования. И ради эксперимента, конечно тоже.
+Чтобы сократить количество запросов в сеть, после ввода очередной буквы названия, ожидание 500мс, loadingIndicator показывается в поле ввода, после получения ответа, скрывается и показывается список городов.
 
 `RecyclerView` со списком уже добавленных городов реализует поведение swipe-to-dismiss и drag & drop. Это очень удобно сделать, используя `ItemTouchHelper`([подробнее](https://developer.android.com/reference/android/support/v7/widget/helper/ItemTouchHelper.html)). 
 `ItemTouchHelper` имеет удобный `ItemTouchHelper.SimpleCallback`, необходимо переопределить `onMove()`, `onSwiped()`, `onSelectedChanged()` по желанию, `clearView()`. После этого просто устанавливается на `RecyclerView`, который должен реализовывать такое поведение(`itemTouchHelper.attachToRecyclerView(relevantRecycler);`).
