@@ -79,7 +79,7 @@ public class AdapterThreeHourForecast extends RecyclerView.Adapter<AdapterThreeH
 
         holder.timeOfForecast.setText(sb.toString());
 
-
+        sb.setLength(0);
 
         // температура
         holder.tempOfForecast.setText(String.format(Locale.getDefault(), "%.0f%s", weatherData.get(position).getMainMeasurements().getTemp(), context.getString(R.string.deg_sign)));

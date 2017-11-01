@@ -7,6 +7,7 @@ import android.support.annotation.Nullable;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -48,6 +49,8 @@ public class ForecastsFragmentPresenter implements IForecastsFragmentPresenter  
 
     private WeakReference<ForecastsFragment> bindedView;
     private Unbinder viewsUnbinder;
+
+    private final String TAG = "WeatherApp";
 
     // RecyclerView с трехчасовым прогнозом и прогнозом по дням
     @Nullable @BindView(R.id.horizontalRecyclerViewHours) RecyclerView threeHourForecastRecycler;
@@ -286,6 +289,7 @@ public class ForecastsFragmentPresenter implements IForecastsFragmentPresenter  
                 // данные не обновлены, но загружены локально сохраненные, информировать пользователя
             } else {
                 // все ок, обновили UI новыми данными
+                Log.i(TAG, "Прогноз " + pojo.getTypeOfData().toString() + " обновлен новыми данными");
             }
 
         } else {

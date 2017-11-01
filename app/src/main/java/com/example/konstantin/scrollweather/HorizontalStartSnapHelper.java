@@ -55,6 +55,7 @@ public class HorizontalStartSnapHelper extends LinearSnapHelper {
 
     // getStartAfterPadding()
     //Returns the start position of the layout after the start padding is added.
+
     private int distanceToStart(View targetView, OrientationHelper helper) {
         return helper.getDecoratedStart(targetView) - helper.getStartAfterPadding();
     }

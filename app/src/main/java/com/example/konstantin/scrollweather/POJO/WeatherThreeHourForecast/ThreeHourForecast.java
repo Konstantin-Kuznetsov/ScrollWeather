@@ -19,7 +19,7 @@ public class ThreeHourForecast implements BasePOJO {
     @SerializedName("cnt")
     private int cnt;
     @SerializedName("list")
-    private ArrayList<WeatherThreeHourInterval> forecastList = null;
+    private ArrayList<WeatherThreeHourInterval> forecastList;
 
 
     public City getCity() {
@@ -34,15 +34,10 @@ public class ThreeHourForecast implements BasePOJO {
         return cnt;
     }
 
-    public List<WeatherThreeHourInterval> getForecastList() {
-        return forecastList;
-    }
-
     @Override
     public TypeOfData getTypeOfData() {
         return TypeOfData.THREE_HOUR_FORECAST;
     }
-
 
     @Override
     public int getCityId() {

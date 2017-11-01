@@ -246,7 +246,7 @@ public class MapOverviewFragmentPresenter implements IMapOverviewFragmentPresent
                 }
             }
 
-            // TODO устанавливаем обработчик нажатий еа каждый маркер в коллекции кластеров ClusterManager
+            // устанавливаем обработчик нажатий еа каждый маркер в коллекции кластеров ClusterManager
             clusterManager.getMarkerCollection().setOnInfoWindowAdapter(new MarkerInfoWindow());
 
             // отступ для оформления берем из ресурсов

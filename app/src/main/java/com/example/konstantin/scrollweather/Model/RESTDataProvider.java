@@ -3,18 +3,14 @@ package com.example.konstantin.scrollweather.Model;
 import android.support.annotation.NonNull;
 import android.util.Log;
 
-import com.example.konstantin.scrollweather.POJO.CitiesListByNamePattern.City;
 import com.example.konstantin.scrollweather.POJO.CitiesListByNamePattern.ListOfCities;
 import com.example.konstantin.scrollweather.POJO.ErrorResponse.ErrorResponse;
-import com.example.konstantin.scrollweather.POJO.TypeOfData;
 import com.example.konstantin.scrollweather.POJO.WeatherDailyForecast.DailyForecast;
 import com.example.konstantin.scrollweather.POJO.WeatherDay.WeatherDay;
 import com.example.konstantin.scrollweather.POJO.WeatherThreeHourForecast.ThreeHourForecast;
-import com.google.android.gms.maps.model.Marker;
 import com.google.gson.Gson;
 
 import java.io.IOException;
-import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.Callback;
