@@ -54,7 +54,7 @@ Presenter
  ClusterManager управляет кластерами с маркерами городов. Никаких особых кастомизаций тут не проводилось, но, можно поменять внешний вид кластера, например. Или поменять поведение по клику на кластер, сейчас просто камера плавно наезжает на область, содержащую маркеры из этого кластера.
  Маркеры тоже никак не кастомизировались, только по клику появляется MarkerInfoWindow (custom_info_window.xml) с некоторыми данными и картинкой. Клик по InfoWindow можно как-то обрабатывать, перебрасывать на страницу с подробным прогнозом или что-то подобное, но тут я ничего не сделал.
  
- ``` 
+ ```java
 googleMap.setOnInfoWindowClickListener(new GoogleMap.OnInfoWindowClickListener() {
  @Override
  public void onInfoWindowClick(Marker marker) {
@@ -62,7 +62,29 @@ googleMap.setOnInfoWindowClickListener(new GoogleMap.OnInfoWindowClickListener()
    // что-то делаем
   }
  }
-}); ```
+}); 
+```
 
+Экран добавления/удаления городов:
+----------     
+![edit-screen](https://user-images.githubusercontent.com/18750579/32275434-4434ceee-bf1c-11e7-98be-6856ad64556b.gif)
 
-                
+![edit2-screen](https://user-images.githubusercontent.com/18750579/32275447-4c8f8002-bf1c-11e7-9644-bc22296c98f8.gif)
+
+Для добавления городов используется кастомизированный AppCompatAutoCompleteTextView. 
+Параметр android:completionThreshold = "2", при вводе двух и более букв названия города, асинхронно запрашивается список примерно подходящих по названию. Можно переключить на точное совпадение поискового запроса в настройках приложения, openweathermap позволяет искать и так и так. Полученный от сервера по api список городов формирует выпадающий список, причем каждый отдельный элемент тоже слегка изменен- загружается иконка погоды, код страны и т.д для удобства использования. И ради эксперимента, конечно тоже.
+
+`RecyclerView` со списком уже добавленных городов реализует поведение swipe-to-dismiss и drag & drop. Это очень удобно сделать, используя `ItemTouchHelper`([подробнее](https://developer.android.com/reference/android/support/v7/widget/helper/ItemTouchHelper.html)). 
+`ItemTouchHelper` имеет удобный `ItemTouchHelper.SimpleCallback`, необходимо переопределить `onMove()`, `onSwiped()`, `onSelectedChanged()` по желанию, `clearView()`. После этого просто устанавливается на `RecyclerView`, который должен реализовывать такое поведение(`itemTouchHelper.attachToRecyclerView(relevantRecycler);`).
+
+Экран настроек:
+----------
+![settings-screen](https://user-images.githubusercontent.com/18750579/32276331-c60cc96e-bf1f-11e7-9fa1-fc7e299b0826.gif)
+
+```java
+public class SettingsFragment extends PreferenceFragmentCompat implements SharedPreferences.OnSharedPreferenceChangeListener { ... }
+```
+
+Экран с настройками реализован через предлагаемый PreferenceFragmentCompat, настройки читаются и пишутся в SharedPreferences.
+Все настройки прописаны в preferences.xml. При изменении настроек, пользователь оповещается через Snackbar - что и как изменено.
+В настройках расположены все настройки, которые позволяет передавать в запросе http://api.openweathermap.org, количество дней в ответе, система измерений, язык и т.д.
