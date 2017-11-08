@@ -6,8 +6,6 @@ import com.example.konstantin.scrollweather.POJO.WeatherDay.WeatherDay;
 import com.example.konstantin.scrollweather.POJO.WeatherThreeHourForecast.ThreeHourForecast;
 
 import retrofit2.Call;
-import retrofit2.Retrofit;
-import retrofit2.converter.gson.GsonConverterFactory;
 import retrofit2.http.GET;
 import retrofit2.http.Query;
 
@@ -16,18 +14,6 @@ import retrofit2.http.Query;
  */
 
 public class WeatherApi {
-    private static final String BASE_URL = "http://api.openweathermap.org/data/2.5/";
-    private static Retrofit retrofit = null;
-
-    static Retrofit getRetrofit() {
-        if (retrofit == null) {
-            retrofit = new Retrofit.Builder()
-                    .baseUrl(BASE_URL)
-                    .addConverterFactory(GsonConverterFactory.create())
-                    .build();
-        }
-        return retrofit;
-    }
 
     public interface WeatherApiInterface {
         @GET("weather") // запрос метода weather от сервера по ID города с указанными ниже параметрами
@@ -37,8 +23,6 @@ public class WeatherApi {
                 @Query("units") String units,
                 @Query("appid") String appid
         );
-
-
 
         @GET("find") // запрос списка городов, подходящих по паттерну в поисковой строке(для выбора при добавлении новых)
         Call<ListOfCities> getListByPattern(
